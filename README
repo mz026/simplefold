@@ -22,4 +22,7 @@ to create folds showing the lines matching the given regexp, leaving everything 
 
 will create folds starting at each line matching foo(bar|baz), so that these are the only lines you see in your buffer (it's effectively a sort of internal grep).
 
+to enable / disable simple fold:
+let b:simplefold_enabled = 1 / 0
+
 See also vimtip#77 and vimscript #158

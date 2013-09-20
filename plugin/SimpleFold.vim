@@ -87,6 +87,7 @@ if exists("loaded_simplefold")
     finish
 endif
 let loaded_simplefold = 1
+let b:simplefold_enabled = 0
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -208,6 +209,9 @@ function! s:search_boundary(fold_start_re, combined_re, use_combined, flags)
 endfunction
 
 function! s:Foldsearch(search)
+    if ! exists("b:simplefold_enabled") || ! b:simplefold_enabled
+      return 
+    endif
     " set manual
     setlocal fdm=manual
     let orig_cursor_pos = getpos(".")
